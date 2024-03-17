@@ -7,9 +7,9 @@ As we can see, at the moment shielded wallet tokens are not displayed in the htt
 To solve this problem we decided to run the network locally and find out what could be the reason for such a strange behaviour of the interface, when tokens are displayed on a regular wallet, but not on a shielded wallet.
 
 <b>While investigating the problem we found out the reasons why tokens are not displayed:</b>
-- 1
-- 2
-- 3
+- shielded balance takes longer to load than transparent balance;
+- the longer the network works, the longer it takes to load the shielded balance;
+- the browser extension has a "timeout" for receiving the balance, so due to the previous factors, the shielded balance is not loaded at all.
 
 To achieve the result on the local network, we changed the epochs_per_year parameter from 31536000 to 1105000, as well as changed the timeout parameter to get the number of tokens in extension. 
 
